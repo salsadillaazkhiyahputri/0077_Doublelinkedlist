@@ -15,7 +15,7 @@ void addNode()
 {
 	Node* newNode = new Node(); //step 1: create a new node
 	cout << "\nEnter the roll number of the student: ";
-	cin >> newNode-> noMhs; // Assign value to the data field of the new node
+	cin >> newNode->noMhs; // Assign value to the data field of the new node
 	cout << "\nEnter the name of the student: ";
 	cin >> newNode->name; //Assign value to the data field of the new node 
 
@@ -33,7 +33,7 @@ void addNode()
 		if (START != NULL)
 		{
 			START->prev = newNode; //step 4 : make the first node point to the new node
-		}  
+		}
 		newNode->prev = NULL; //step 5: make the new node point to NULL
 		START = newNode;	 // step 6 make the new node the first node	
 	}
@@ -51,5 +51,12 @@ void addNode()
 
 		newNode->next = current; //step 4: Make the next field of the new Node point to current.
 		newNode->prev = previous; // step 5 Make the previous field of the new node point to previous.
-	
+
+		if (current != NULL)
+		{
+			current->prev = newNode; // step 6: Make the previous field of the current node point to the new node
+		}
+	}
 }
+
+		
